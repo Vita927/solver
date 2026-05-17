@@ -13,3 +13,5 @@ set(VERSION_TWEAK 0)
 set(VERSION "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}.${VERSION_TWEAK}")
 
 include(CPackConfig.cmake)
+
+include(CPackConfig.cmake)

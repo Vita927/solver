@@ -10,15 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    
     - name: Install CMake and RPM
       run: sudo apt update && sudo apt install cmake rpm
-    
     - name: Configure and build
       run: |
         cmake -H. -B_build
         cmake --build _build
-    
     - name: Create packages
       run: |
         cd _build
@@ -26,7 +23,6 @@ jobs:
         cpack -G RPM
         cpack -G TGZ
         cd ..
-    
     - name: Create Release
       uses: softprops/action-gh-release@v2
       with:
